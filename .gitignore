@@ -1,0 +1,19 @@
+# Jupyter NB Checkpoints
+.ipynb_checkpoints/
+
+# exclude zipped.files
+*.zip
+*.tar
+*.tar.gz
+
+# txt-files
+*.txt
+
+# provisorial readme
+provisorial-readme.md
+
+# data folders
+/lablaut/
+/labsilb/
+/silb/
+/wav/
