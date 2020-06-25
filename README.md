@@ -13,7 +13,7 @@ For this project we use the Emo-DB data. The database is containing samples of e
 The database has 535 sound samples, each one spoken by one of 10 different professional voice actors (5 female, 5 male) in one of 7 emotions. The texts spoken by the actors have a neutral content, are randomly selected and do not contain any hints to the emotion, i.e. only the way a sentence is spoken gives information about the emotion not the content.
 
 Some summary statistics about the data:
-<p align="center"><img src="./figures/data_info.png?" alt="sound wave" height="200" width="400"></p>
+<p align="center"><img src="./figures/data_info.png?" alt="summary statistics" height="350"></p>
 
 The Emo-DB dataset and more details about it can be found [here](http://emodb.bilderbar.info/index-1280.html).
 
@@ -32,7 +32,7 @@ There are multiple ways to deal with time series data like audio signals, one of
 In this project we use advanced signal processing to convert the 1D audio signals into 2D [Mel-spectrograms](https://en.wikipedia.org/wiki/Mel-frequency_cepstrum). One can think of these image-like representations as a time distributed frequency spectrum of the signal. For each time step in the signal we get a spectrum.
 
 Example Mel-spectrogram:
-<p align="center"><img src="./figures/mel_spec.png?" alt="mel spectrogram" height="125" width="400"></p>
+<p align="center"><img src="./figures/mel_spec.png?" alt="mel spectrogram" height="200" ></p>
 
 The 1D time series is now converted to a 2D image representation for which we can use simple computer vision methods like convolutional neural networks (CNN). __The idea is to identify unique patterns in the frequency domain which are independent of the speaker and correspond to a certain emotion.__
 
@@ -76,7 +76,7 @@ __Disclaimer__: Because this project is a simple fun proof of concept  project o
 
 |Overall Performance | Confusion Matrix |
 |---|---|
-|<p align="center"><img src="./figures/precision_recall_f1.png?" alt="metrics" height="200"></p>|<p align="center"><img src="./figures/confusion_matrix.png?" alt="confusion matrix" height="200"></p>
+|<p align="center"><img src="./figures/precision_recall_f1.png?" alt="metrics" height="350"></p>|<p align="center"><img src="./figures/confusion_matrix.png?" alt="confusion matrix" height="350"></p>
 
 The final evaluation shows that we achieve an accuracy of 0.71 and a F1-value of 0.71 on the hold-out test set. If we weight the predictions by their frequency we get slightly better results.  
 The confusion matrix shows that the model has the most difficulties with the emotions happiness (F), neutral (N) and fear (A). Interestingly we observe that there is a lot confusion between neutral (N) and boredom (L), which makes sense since a bored voice can be easily confused with a neutral voice. Moreover happiness (F) and anger (W) being confused sometimes. A possible explanation for this is that these two emotions express themselves in a louder than normal and faster paced voice.  
